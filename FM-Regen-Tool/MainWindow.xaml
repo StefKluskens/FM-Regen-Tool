@@ -1,0 +1,39 @@
+﻿<Window x:Class="FM_Regen_Tool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FM_Regen_Tool"
+        xmlns:viewmodel="clr-namespace:FM_Regen_Tool.ViewModel"
+        mc:Ignorable="d"
+        Title="FM Regen Tool" Height="450" Width="800"
+        Background="Black">
+
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+
+    <Grid>
+        <Frame NavigationUIVisibility="Hidden"
+               Content="{Binding CurrentPage}"/>
+
+        <Button VerticalAlignment="Top"
+        Command="{Binding SwitchPageCommand}"
+        Content="{Binding ButtonContent}"
+        Grid.Row="1"/>
+
+        <Button VerticalAlignment="Bottom"
+        Command="{Binding SwitchPageCommand}"
+        Content="New Player"
+        Grid.Row="1"/>
+
+        <Button VerticalAlignment="Bottom"
+        Command="{Binding SwitchPageCommand}"
+        Content="Save Player"
+        Grid.Row="1"/>
+    </Grid>
+</Window>
