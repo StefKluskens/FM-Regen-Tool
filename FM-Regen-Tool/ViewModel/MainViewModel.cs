@@ -4,7 +4,9 @@ using FM_Regen_Tool.Model;
 using FM_Regen_Tool.View;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -24,7 +26,7 @@ namespace FM_Regen_Tool.ViewModel
 
         public string ButtonContent { get; set;}
 
-        private Player _player = new Player();
+        private List<Player> _players = new List<Player>();
 
         public MainViewModel()
         {
@@ -57,20 +59,26 @@ namespace FM_Regen_Tool.ViewModel
 
         public void NewPlayer()
         {
-            RequiredVM.NewPlayer(_player);
-            OptionalVM.NewPlayer(_player);
+            (RequiredPage.DataContext as RequiredVM)?.NewPlayer();
+            (OptionalPage.DataContext as OptionalVM)?.NewPlayer();
         }
 
         public void SavePlayer()
         {
-            RequiredVM.SavePlayer();
-            OptionalVM.SavePlayer();
+            Player player = new Player();
+
+            (RequiredPage.DataContext as RequiredVM)?.SavePlayer(player);
+            (OptionalPage.DataContext as OptionalVM)?.SavePlayer(player);
+
+            _players.Add(player);
         }
 
         public void ExportFile()
         {
-            RequiredVM.ExportFile();
-            OptionalVM.ExportFile();
+            foreach (Player player in _players)
+            {
+                Debug.WriteLine(player.GetPlayerString());
+            }
         }
     }
 }

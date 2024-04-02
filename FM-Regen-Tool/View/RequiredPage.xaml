@@ -40,11 +40,14 @@
                            FontSize="20"
                            Margin="0,0,10,0"/>
 
-                <RichTextBox Grid.Column="1" 
+                <TextBox x:Name="FirstNameText"
+                             Grid.Column="1" 
                              HorizontalAlignment="Stretch"
                              VerticalAlignment="Center"
                              AcceptsReturn="False"
-                             FontSize="20"/>
+                             FontSize="20"
+                             Text="{Binding FirstName}"
+                             />
             </Grid>
 
             <Grid>
@@ -60,11 +63,12 @@
                            FontSize="20"
                            Margin="0,0,10,0"/>
 
-                <RichTextBox Grid.Column="1" 
+                <TextBox Grid.Column="1" 
                              HorizontalAlignment="Stretch"
                              VerticalAlignment="Center"
                              AcceptsReturn="False"
-                             FontSize="20"/>
+                             FontSize="20"
+                             Text="{Binding LastName}"/>
             </Grid>
 
             <Grid>
@@ -80,11 +84,12 @@
                            FontSize="20"
                            Margin="0,0,10,0"/>
 
-                <RichTextBox Grid.Column="1" 
+                <TextBox Grid.Column="1" 
                              HorizontalAlignment="Stretch"
                              VerticalAlignment="Center"
                              AcceptsReturn="False"
-                             FontSize="20"/>
+                             FontSize="20"
+                             Text="{Binding BirthDate}"/>
             </Grid>
 
             <Grid>
@@ -100,11 +105,12 @@
                            FontSize="20"
                            Margin="0,0,10,0"/>
 
-                <RichTextBox Grid.Column="1" 
-                             HorizontalAlignment="Stretch"
-                             VerticalAlignment="Center"
-                             AcceptsReturn="False"
-                             FontSize="20"/>
+                <ComboBox Grid.Column="1" 
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                          FontSize="20"
+                          ItemsSource="{Binding SkinToneList}"
+                          SelectedItem="{Binding SkinTone, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
             <Grid>
@@ -120,11 +126,13 @@
                            FontSize="20"
                            Margin="0,0,10,0"/>
 
-                <RichTextBox Grid.Column="1" 
-                             HorizontalAlignment="Stretch"
-                             VerticalAlignment="Center"
-                             AcceptsReturn="False"
-                             FontSize="20"/>
+                <ComboBox Grid.Column="1" 
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                          FontSize="20"
+                          ItemsSource="{Binding HairColourList}"
+                          SelectedItem="{Binding HairColour}"
+                          />
             </Grid>
 
             <Grid>
@@ -140,11 +148,12 @@
                            FontSize="20"
                            Margin="0,0,10,0"/>
 
-                <RichTextBox Grid.Column="1" 
+                <TextBox Grid.Column="1" 
                              HorizontalAlignment="Stretch"
                              VerticalAlignment="Center"
                              AcceptsReturn="False"
-                             FontSize="20"/>
+                             FontSize="20"
+                             Text="{Binding ClubId}"/>
             </Grid>
         </StackPanel>
         

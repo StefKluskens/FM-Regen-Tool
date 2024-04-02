@@ -26,7 +26,7 @@
                     <Setter Property="Margin" Value="15,0,0,0"/>
                 </Style>
             </ScrollViewer.Resources>
-            
+
             <StackPanel Grid.ColumnSpan="2">
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type Grid}">
@@ -47,11 +47,12 @@
                FontSize="20"
                Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
-                 HorizontalAlignment="Stretch"
-                 VerticalAlignment="Center"
-                 AcceptsReturn="False"
-                 FontSize="20"/>
+                    <TextBox Grid.Column="1" 
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Center"
+                                 AcceptsReturn="False"
+                                 FontSize="20"
+                                 Text="{Binding NickName}"/>
                 </Grid>
 
                 <Grid>
@@ -60,18 +61,19 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Nationality (ID)" 
+                    <TextBlock Text="Nation" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Center"
                Foreground="White"
                FontSize="20"
                Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
-                 HorizontalAlignment="Stretch"
-                 VerticalAlignment="Center"
-                 AcceptsReturn="False"
-                 FontSize="20"/>
+                    <TextBox Grid.Column="1" 
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Center"
+                             AcceptsReturn="False"
+                             FontSize="20"
+                             Text="{Binding Nation}"/>
                 </Grid>
 
                 <Grid>
@@ -87,11 +89,12 @@
                FontSize="20"
                Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
+                    <TextBox Grid.Column="1" 
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Center"
                  AcceptsReturn="False"
-                 FontSize="20"/>
+                 FontSize="20"
+                             Text="{Binding FavouriteClub}"/>
                 </Grid>
 
                 <Grid>
@@ -107,11 +110,12 @@
                FontSize="20"
                Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
-                 HorizontalAlignment="Stretch"
-                 VerticalAlignment="Center"
-                 AcceptsReturn="False"
-                 FontSize="20"/>
+                    <ComboBox Grid.Column="1" 
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              FontSize="20"
+                              ItemsSource="{Binding EthnicityList}"
+                              SelectedItem="{Binding Ethnicity}"/>
                 </Grid>
 
                 <Grid>
@@ -120,18 +124,19 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Height" 
+                    <TextBlock Text="Height (cm)" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Center"
                Foreground="White"
                FontSize="20"
                Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
+                    <TextBox Grid.Column="1" 
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Center"
                  AcceptsReturn="False"
-                 FontSize="20"/>
+                 FontSize="20"
+                             Text="{Binding Height}"/>
                 </Grid>
 
                 <Grid>
@@ -140,18 +145,19 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Weight" 
+                    <TextBlock Text="Weight (kg)" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Center"
                Foreground="White"
                FontSize="20"
                Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
+                    <TextBox Grid.Column="1" 
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Center"
                  AcceptsReturn="False"
-                 FontSize="20"/>
+                 FontSize="20"
+                             Text="{Binding Weight}"/>
                 </Grid>
 
                 <Grid>
@@ -161,17 +167,18 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Preferred Foot" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"
-                   Foreground="White"
-                   FontSize="20"
-                   Margin="0,0,10,0"/>
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontSize="20"
+                               Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
-                     HorizontalAlignment="Stretch"
-                     VerticalAlignment="Center"
-                     AcceptsReturn="False"
-                     FontSize="20"/>
+                    <ComboBox Grid.Column="1" 
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              FontSize="20"
+                              ItemsSource="{Binding FootList}"
+                              SelectedItem="{Binding Foot}"/>
                 </Grid>
 
                 <Grid>
@@ -187,11 +194,12 @@
                    FontSize="20"
                    Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
-                     HorizontalAlignment="Stretch"
-                     VerticalAlignment="Center"
-                     AcceptsReturn="False"
-                     FontSize="20"/>
+                    <ComboBox Grid.Column="1" 
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              FontSize="20"
+                              ItemsSource="{Binding PositionList}"
+                              SelectedItem="{Binding Position}"/>
                 </Grid>
 
                 <Grid>
@@ -207,11 +215,12 @@
                    FontSize="20"
                    Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
+                    <TextBox Grid.Column="1" 
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Center"
                      AcceptsReturn="False"
-                     FontSize="20"/>
+                     FontSize="20"
+                             Text="{Binding PreferredNumber}"/>
                 </Grid>
 
                 <Grid>
@@ -227,11 +236,12 @@
                    FontSize="20"
                    Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
+                    <TextBox Grid.Column="1" 
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Center"
                      AcceptsReturn="False"
-                     FontSize="20"/>
+                     FontSize="20"
+                             Text="{Binding BirthCity}"/>
                 </Grid>
 
                 <Grid>
@@ -247,11 +257,12 @@
                    FontSize="20"
                    Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
+                    <TextBox Grid.Column="1" 
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Center"
                      AcceptsReturn="False"
-                     FontSize="20"/>
+                     FontSize="20"
+                             Text="{Binding CurrentAbility}"/>
                 </Grid>
 
                 <Grid>
@@ -267,11 +278,12 @@
                    FontSize="20"
                    Margin="0,0,10,0"/>
 
-                    <RichTextBox Grid.Column="1" 
+                    <TextBox Grid.Column="1" 
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Center"
                      AcceptsReturn="False"
-                     FontSize="20"/>
+                     FontSize="20"
+                             Text="{Binding PotentialAbility}"/>
                 </Grid>
 
             </StackPanel>
