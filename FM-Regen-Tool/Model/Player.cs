@@ -19,13 +19,13 @@ namespace FM_Regen_Tool.Model
         //Optional Fields
         public string NickName { get; set; }
         public string Nationality { get; set; }
-        public string FavoriteClub { get; set; }
+        public string FavouriteClub { get; set; }
         public string Ethnicity { get; set; }        
         public string Height { get; set; }
         public string Weight { get; set; }
         public string PreferredFoot { get; set; }
         public string PreferredPosition { get; set; }
-        public string FavoriteNumber { get; set; }
+        public string FavouriteNumber { get; set; }
         public string BirthCity { get; set; }
         public string CurrentAbility { get; set; }
         public string PotentialAbility { get; set; }

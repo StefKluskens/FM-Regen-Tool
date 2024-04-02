@@ -13,27 +13,45 @@
         <viewmodel:MainViewModel/>
     </Window.DataContext>
 
-    <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-    </Window.Resources>
-
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
         <Frame NavigationUIVisibility="Hidden"
-               Content="{Binding CurrentPage}"/>
+               Content="{Binding CurrentPage}"
+               Grid.Row="1"
+               Grid.ColumnSpan="3"/>
 
         <Button VerticalAlignment="Top"
         Command="{Binding SwitchPageCommand}"
         Content="{Binding ButtonContent}"
-        Grid.Row="1"/>
+        Grid.Row="0"/>
 
         <Button VerticalAlignment="Bottom"
-        Command="{Binding SwitchPageCommand}"
+        Command="{Binding NewPlayerCommand}"
         Content="New Player"
-        Grid.Row="1"/>
+        Grid.Row="2"
+        Grid.Column="0"/>
 
         <Button VerticalAlignment="Bottom"
-        Command="{Binding SwitchPageCommand}"
+        Command="{Binding SavePlayerCommand}"
         Content="Save Player"
-        Grid.Row="1"/>
+        Grid.Row="2"
+        Grid.Column="1"/>
+
+        <Button VerticalAlignment="Bottom"
+        Command="{Binding ExportFileCommand}"
+        Content="Export File"
+        Grid.Row="2"
+        Grid.Column="2"/>
     </Grid>
 </Window>
