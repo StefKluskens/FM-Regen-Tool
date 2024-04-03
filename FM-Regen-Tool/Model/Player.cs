@@ -27,11 +27,106 @@ namespace FM_Regen_Tool.Model
         public string PreferredPosition { get; set; }
         public string FavouriteNumber { get; set; }
         public string BirthCity { get; set; }
-        public string CurrentAbility { get; set; }
-        public string PotentialAbility { get; set; }
+
+        private string _currentAbility;
+        public string CurrentAbility 
+        {
+            get
+            {
+                return _currentAbility;
+            }
+            set
+            {
+                int ca;
+                bool result = int.TryParse(value, out ca);
+
+                if (result)
+                {
+                    if (ca < 0)
+                    {
+                        ca = 0;
+                    }
+                    else if (ca > 200)
+                    {
+                        ca = 200;
+                    }
+
+                    _currentAbility = ca.ToString();
+                }
+            }
+        }
+
+        private string _potentialAbility;
+        public string PotentialAbility 
+        { 
+            get
+            {
+                return _potentialAbility;
+            }
+            set
+            {
+                int pa;
+                bool result = int.TryParse(value, out pa);
+
+                if (result)
+                {
+                    if (pa < 0)
+                    {
+                        pa = 0;
+                    }
+                    else if (pa > 200)
+                    {
+                        pa = 200;
+                    }
+
+                    _potentialAbility = pa.ToString();
+                }
+            }
+        }
 
         private string _startString = "\"DETAILED_FUTURE_REGEN\"";
-        
+
+        private void SetPosition()
+        {
+            switch (PreferredPosition)
+            {
+                case "Goalkeeper":
+                    PreferredPosition = "GOALKEEPER";
+                    break;
+                case "Left Defender":
+                    PreferredPosition = "DEFENDER_LEFT_SIDE";
+                    break;
+                case "Right Defender":
+                    PreferredPosition = "DEFENDER_RIGHT_SIDE";
+                    break;
+                case "Central Defender":
+                    PreferredPosition = "DEFENDER_CENTRAL";
+                    break;
+                case "Left Midfielder":
+                    PreferredPosition = "MIDFIELDER_LEFT_SIDE";
+                    break;
+                case "Right Midfielder":
+                    PreferredPosition = "MIDFIELDER_RIGHT_SIDE";
+                    break;
+                case "Central Midfielder":
+                    PreferredPosition = "MIDFIELDER_CENTRAL";
+                    break;
+                case "Attacking Left Midfielder":
+                    PreferredPosition = "ATTACKING_MIDFIELDER_LEFT_SIDE";
+                    break;
+                case "Attacking Right Midfielder":
+                    PreferredPosition = "ATTACKING_MIDFIELDER_RIGHT_SIDE";
+                    break;
+                case "Attacking Central Midfielder":
+                    PreferredPosition = "ATTACKING_MIDFIELDER_CENTRAL";
+                    break;
+                case "Attacker Central":
+                    PreferredPosition = "ATTACKER_CENTRAL";
+                    break;
+                default:
+                    break;
+            }
+        }
 
         public string GetPlayerString()
         {
@@ -81,11 +176,12 @@ namespace FM_Regen_Tool.Model
             sb.Append(" \"");
             sb.Append(Weight);
             sb.Append("\"");
-
+            
             sb.Append(" \"");
             sb.Append(PreferredFoot);
             sb.Append("\"");
 
+            SetPosition();
             sb.Append(" \"");
             sb.Append(PreferredPosition);
             sb.Append("\"");
@@ -109,8 +205,6 @@ namespace FM_Regen_Tool.Model
             sb.Append(" \"");
             sb.Append(ClubId);
             sb.Append("\"");
-
-            sb.Append('\n');
 
             return sb.ToString();
         }

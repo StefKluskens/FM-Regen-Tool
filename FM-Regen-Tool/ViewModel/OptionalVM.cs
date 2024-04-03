@@ -1,10 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using FM_Regen_Tool.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FM_Regen_Tool.ViewModel
 {
@@ -242,12 +237,15 @@ namespace FM_Regen_Tool.ViewModel
             player.Nationality = _nation;
             player.FavouriteClub = _favouriteClub;
 
-            player.Ethnicity = _ethnicity;
+            int index = _ethnicityList.IndexOf(_ethnicity);
+            --index;
+            player.Ethnicity = index.ToString();
 
             player.Height = _height;
             player.Weight = _weight;
 
-            player.PreferredFoot = _foot;
+            index = _footList.IndexOf(_foot);
+            player.PreferredFoot = index.ToString();
             player.PreferredPosition = _position;
 
             player.FavouriteNumber = _preferredNumber;

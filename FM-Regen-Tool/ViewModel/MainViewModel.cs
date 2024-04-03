@@ -2,14 +2,9 @@
 using CommunityToolkit.Mvvm.Input;
 using FM_Regen_Tool.Model;
 using FM_Regen_Tool.View;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.IO;
 
 namespace FM_Regen_Tool.ViewModel
 {
@@ -75,9 +70,21 @@ namespace FM_Regen_Tool.ViewModel
 
         public void ExportFile()
         {
-            foreach (Player player in _players)
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog.Title = "Save File";
+            saveFileDialog.DefaultExt = "edt";
+            saveFileDialog.Filter = "EDT files (*.edt)|*.edt";
+            
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                Debug.WriteLine(player.GetPlayerString());
+                using (StreamWriter sw = File.CreateText(saveFileDialog.FileName))
+
+                foreach (Player player in _players)
+                {
+                    Debug.WriteLine(player.GetPlayerString());
+                    sw.WriteLine(player.GetPlayerString());
+                }
             }
         }
     }
