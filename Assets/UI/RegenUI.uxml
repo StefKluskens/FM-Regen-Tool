@@ -1,0 +1,21 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Template name="RequiredInput" src="project://database/Assets/UI/RequiredInput.uxml?fileID=9197481963319205126&amp;guid=4c1b81636c15b9a4b95f9cc18196c19d&amp;type=3#RequiredInput" />
+    <engine:Template name="OptionalInfo" src="project://database/Assets/UI/OptionalInfo.uxml?fileID=9197481963319205126&amp;guid=77a7507a7379e294795703c5fb0f48aa&amp;type=3#OptionalInfo" />
+    <engine:VisualElement name="Root" style="flex-grow: 1; background-color: rgb(64, 64, 64);">
+        <engine:ScrollView name="ScrollView" horizontal-scroller-visibility="Hidden">
+            <engine:TabView name="Tabs">
+                <engine:Tab label="Required" name="RequiredTab">
+                    <engine:Instance template="RequiredInput" name="RequiredInfoTemplate" />
+                </engine:Tab>
+                <engine:Tab label="Optional" name="OptionalTab">
+                    <engine:Instance template="OptionalInfo" name="OptionalInfoTemplate" />
+                </engine:Tab>
+                <engine:Tab label="Player List" name="PlayerListTab" />
+            </engine:TabView>
+        </engine:ScrollView>
+    </engine:VisualElement>
+    <engine:VisualElement name="ButtonsHolder" style="flex-grow: 1; flex-direction: row; align-items: flex-end; justify-content: center; background-color: rgb(64, 64, 64);">
+        <engine:Button text="Create Player" name="CreatePlayerButton" />
+        <engine:Button text="Export File" name="ExportFileButton" />
+    </engine:VisualElement>
+</engine:UXML>

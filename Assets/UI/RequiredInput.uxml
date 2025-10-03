@@ -1,0 +1,35 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/RegenUIStyle.uss?fileID=7433441132597879392&amp;guid=01c63d301ebeab140be9e3139efddb35&amp;type=3#RegenUIStyle" />
+    <engine:VisualElement name="Root" data-source="project://database/Assets/Resources/PlayerHolder.asset?fileID=11400000&amp;guid=d457aeb466e89fb4691d1ded445e6d4b&amp;type=2#PlayerHolder" style="flex-grow: 1;">
+        <engine:TextField label="First Name" placeholder-text="First Name" name="FirstNameInput">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="FirstName" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:TextField>
+        <engine:TextField label="Last Name" placeholder-text="Last Name" name="LastNameInput">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="LastName" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:TextField>
+        <DateOfBirthElement name="DateOfBirthInput" data-source-path="BirthDate">
+            <Bindings>
+                <engine:DataBinding property="DateOfBirth" data-source-path="BirthDate" binding-mode="TwoWay" />
+            </Bindings>
+        </DateOfBirthElement>
+        <engine:DropdownField label="Skin Tone" name="SkinToneInput">
+            <Bindings>
+                <engine:DataBinding property="index" data-source-path="SkinTone" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:DropdownField>
+        <engine:IntegerField label="Club ID" value="0" name="ClubIDInput" max-length="100000">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="ClubID" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:IntegerField>
+        <engine:DropdownField label="Hair Colour" name="HairColourInput">
+            <Bindings>
+                <engine:DataBinding property="index" data-source-path="HairColour" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:DropdownField>
+    </engine:VisualElement>
+</engine:UXML>

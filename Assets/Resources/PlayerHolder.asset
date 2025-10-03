@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fdc78466457354aafdc0edf3bd317b, type: 3}
+  m_Name: PlayerHolder
+  m_EditorClassIdentifier: 
+  FirstName: 
+  LastName: 
+  BirthDate: 
+  SkinTone: 0
+  ClubID: 0
+  HairColour: 0
+  Nation: 
+  NickName: 
+  FavouriteClubID: 0
+  Height: 0
+  Weight: 0
+  CurrentAbility: 0
+  PotentialAbility: 0
+  FavouriteNumber: 0
+  BirthCity: 
+  Ethnicity: 0
+  PreferredFoot: 0
+  Position: 0

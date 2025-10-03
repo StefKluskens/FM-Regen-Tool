@@ -1,0 +1,65 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/RegenUIStyle.uss?fileID=7433441132597879392&amp;guid=01c63d301ebeab140be9e3139efddb35&amp;type=3#RegenUIStyle" />
+    <engine:VisualElement name="Root" data-source="project://database/Assets/Resources/PlayerHolder.asset?fileID=11400000&amp;guid=d457aeb466e89fb4691d1ded445e6d4b&amp;type=2#PlayerHolder" style="flex-grow: 1;">
+        <engine:TextField label="Nick Name" placeholder-text="Nick Name" name="NickNameInput">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="NickName" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:TextField>
+        <engine:TextField label="Nation" placeholder-text="Nation" name="NationInput">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="Nation" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:TextField>
+        <engine:TextField label="Birth City" placeholder-text="Birth City" name="BirthCityInput">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="BirthCity" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:TextField>
+        <engine:IntegerField label="Favourite Club ID" value="0" name="FavouriteClubInput" max-length="100000000">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="FavouriteClubID" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:IntegerField>
+        <engine:IntegerField label="Favourite Number" value="0" name="FavouriteNumberInput" max-length="99">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="FavouriteNumber" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:IntegerField>
+        <engine:IntegerField label="Height (cm)" value="0" name="HeightInput" max-length="200">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="Height" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:IntegerField>
+        <engine:IntegerField label="Weight (cm)" value="0" name="WeightInput">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="Weight" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:IntegerField>
+        <engine:IntegerField label="Current Ability" value="0" name="CurrentAbilityInput" max-length="200">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="CurrentAbility" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:IntegerField>
+        <engine:IntegerField label="Potential Ability" value="0" name="PotentialAbilityInput" max-length="200">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="PotentialAbility" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:IntegerField>
+        <engine:DropdownField label="Ethnicity" name="EthnicityInput">
+            <Bindings>
+                <engine:DataBinding property="index" data-source-path="Ethnicity" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:DropdownField>
+        <engine:DropdownField label="Preferred Foot" name="FootInput">
+            <Bindings>
+                <engine:DataBinding property="index" data-source-path="PreferredFoot" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:DropdownField>
+        <engine:DropdownField label="Position" name="PositionInput">
+            <Bindings>
+                <engine:DataBinding property="index" data-source-path="Position" binding-mode="TwoWay" />
+            </Bindings>
+        </engine:DropdownField>
+    </engine:VisualElement>
+</engine:UXML>
