@@ -8,13 +8,15 @@ There are 2 pages with properties that can be filled in:
 
 The first page holds the required properties. These properties are required to be filled in by the game in order to create a player. The second page holds the optional properties. These properties are not required to create a player and, if left blank, will be randomised by the game.
 
-This tool was made in C#, using WPF for the UI elements.
+This tool was made in C#, using Unity's UI Toolkit for the UI elements.
 
 Features:
 * Creating a list of players
 * Exporting file with all players
-
-Future features:
 * Display created players
 * Edit previously created players
+
+Future features:
 * Import previously made file
+* Visual warnings for better user experience
+* Better styling using Unity's style sheets
